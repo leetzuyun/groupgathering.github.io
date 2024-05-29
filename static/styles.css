@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #f8f9fa;
+    background-image: url('background.jpg'); /* 確保圖片路徑正確 */
+    background-size: cover;
+    background-attachment: fixed; /* 固定背景圖片 */
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px; /* 減小容器寬度 */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* 更透明背景，以便看到背景圖片 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1, h2, p {
+    margin: 0 0 10px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 2em;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #495057;
+}
+
+p {
+    font-size: 1em;
+    color: #6c757d;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9em; /* 減小字體大小 */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center; /* 輸入框中的字體居中 */
+}
+
+button {
+    display: block; /* 修改為 block，讓按鈕佔整行 */
+    width: 100%;
+    font-weight: 400;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    padding: 10px 0;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    max-height: 60vh; /* 設定最大高度，確保滾動條顯示 */
+    overflow-y: auto; /* 垂直滾動條 */
+    margin-top: 20px;
+}
+
+.restaurant {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.restaurant:last-child {
+    border-bottom: none;
+}
+
+/* 新增的樣式，讓勾選框和標籤對齊 */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* 移除多餘間距 */
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* 調整勾選框與文字的底部間距 */
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: -580px; /* 減小右邊距 */
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查詢結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: "Noto Sans TC", sans-serif; /* 使用繁體中文字體 */
+        }
+        .container {
+            max-height: 90vh; /* 最大高度 */
+            overflow-y: auto; /* 垂直滾動條 */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .restaurant {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .restaurant:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>查詢結果</h1>
+        {% if result %}
+            <ul>
+            {% for restaurant in result %}
+                <li class="restaurant">
+                    <h2>{{ restaurant['餐廳名稱'] }}</h2>
+                    <p>地址: {{ restaurant['地址'] }}</p>
+                    <p>營業時間: {{ restaurant['營業時間'] }}</p>
+                    <p>鄰近捷運站: {{ restaurant['鄰近捷運站'] }}</p>
+                    <p>電話: {{ restaurant['電話'] }}</p>
+                    <p>訂位網站: <a href="{{ restaurant['訂位網站'] }}" target="_blank">{{ restaurant['訂位網站'] }}</a></p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>沒有找到符合條件的餐廳。</p>
+        {% endif %}
+        <a href="/">返回查詢頁面</a>
+    </div>
+</body>
+</html>
